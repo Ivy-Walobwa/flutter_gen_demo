@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../gen/assets.gen.dart';
 
 class JSONView extends StatefulWidget {
   const JSONView({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _JSONViewState extends State<JSONView> {
 
   loadJson() async {
     final String response =
-        await rootBundle.loadString("assets/json/assets_tye.json");
+        await rootBundle.loadString(Assets.json.assetsTye);
     final data = await json.decode(response);
     setState(() {
       assets = data;

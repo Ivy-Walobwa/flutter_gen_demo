@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import '../gen/assets.gen.dart';
 
 class VideoView extends StatefulWidget {
   const VideoView({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _VideoViewState extends State<VideoView> {
   @override
   void initState() {
     super.initState();
-    _videoController = VideoPlayerController.asset("assets/video/bee.mp4");
+    _videoController = VideoPlayerController.asset(Assets.video.bee);
     _videoController.addListener(() {
       setState(() {});
     });

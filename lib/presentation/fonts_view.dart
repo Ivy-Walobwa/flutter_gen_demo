@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../gen/fonts.gen.dart';
 
 class FontsView extends StatelessWidget {
   const FontsView({Key? key}) : super(key: key);
@@ -12,14 +13,14 @@ class FontsView extends StatelessWidget {
         Text("Fonts Asset", style: Theme.of(context).textTheme.headline2),
         const Text(
           "This is RobotoMono font - medium",
-          style: TextStyle(fontFamily: 'RobotoMono'),
+          style: TextStyle(fontFamily: FontFamily.robotoMono),
         ),
         const Text("This is RobotoMono font - bold",
             style: TextStyle(
-                fontFamily: 'RobotoMono', fontWeight: FontWeight.w700)),
+                fontFamily: FontFamily.robotoMono, fontWeight: FontWeight.w700)),
         const Text("This is RobotoMono font - italic",
             style: TextStyle(
-                fontFamily: 'RobotoMono', fontStyle: FontStyle.italic)),
+                fontFamily: FontFamily.robotoMono, fontStyle: FontStyle.italic)),
 
         const Text(
           "Scroll horizontally to view next asset",

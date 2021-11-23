@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
+import '../gen/assets.gen.dart';
 
 class AnimationView extends StatefulWidget {
   const AnimationView({Key? key}) : super(key: key);
@@ -10,7 +11,8 @@ class AnimationView extends StatefulWidget {
 
 class _AnimationViewState extends State<AnimationView> {
   late RiveAnimationController _animationController;
-@override
+
+  @override
   void initState() {
     super.initState();
     _animationController = SimpleAnimation('idle');
@@ -29,22 +31,22 @@ class _AnimationViewState extends State<AnimationView> {
       direction: Axis.vertical,
       spacing: 8,
       children: [
-        Text("Animation Asset",
-            style: Theme.of(context).textTheme.headline2),
+        Text("Animation Asset", style: Theme.of(context).textTheme.headline2),
         SizedBox(
           height: 200,
-            width: 400,
-            child: RiveAnimation.asset(
-              "assets/animations/vehicles.riv",
-              controllers: [_animationController],
-              animations: const ['idle', 'curves'],
-            )),
-        const SizedBox(height: 16,),
+          width: 400,
+          child: Assets.animations.vehicles.rive(
+            controllers: [_animationController],
+            animations: const ['idle', 'curves'],
+          ),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
         const Text(
           "Scroll horizontally to view next asset",
         ),
       ],
     );
-
   }
 }

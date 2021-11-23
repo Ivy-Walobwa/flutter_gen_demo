@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../gen/assets.gen.dart';
 
 class PNGImageView extends StatelessWidget {
   const PNGImageView({Key? key}) : super(key: key);
@@ -10,12 +11,7 @@ class PNGImageView extends StatelessWidget {
       spacing: 8,
       children: [
         Text("PNG Image", style: Theme.of(context).textTheme.headline2),
-
-        Image.asset(
-          "assets/images/add_color.png",
-          height: 400,
-          width: 400,
-        ),
+        Assets.images.addColor.image(width: 400, height: 400),
 
         const Text(
           "Scroll horizontally to view next asset",
